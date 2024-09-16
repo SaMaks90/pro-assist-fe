@@ -1,0 +1,14 @@
+.userLogo {
+  width: 50px;
+  height: 50px;
+  background: #c3bfbf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

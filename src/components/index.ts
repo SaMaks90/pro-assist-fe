@@ -5,6 +5,8 @@ import { LoginForm } from "./login/login-form/LoginForm";
 import { Header } from "./header/Header";
 import { RegistrationForm } from "./registration/registration-form/RegistrationForm";
 import { HeaderNavigation } from "./header-navigation/HeaderNavigation";
+import { UserLogo } from "./user-logo/UserLogo";
+import { AboutUser } from "./about-user/AboutUser";
 
 export {
   Login,
@@ -14,4 +16,6 @@ export {
   Header,
   RegistrationForm,
   HeaderNavigation,
+  UserLogo,
+  AboutUser,
 };

@@ -31,20 +31,4 @@
       }
     }
   }
-
-  .loginButton {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Poppins", sans-serif;
-    border: 1px solid #6c6c6c;
-    padding: 10px 20px 10px 20px;
-    border-radius: 100px;
-    background: none;
-    transition: 0.5s linear color;
-
-    &:hover {
-      cursor: pointer;
-      color: gray;
-    }
-  }
 }

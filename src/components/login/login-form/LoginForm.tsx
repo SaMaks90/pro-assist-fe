@@ -3,7 +3,6 @@ import styles from "./login-form.module.scss";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { clsx } from "clsx";
 import { ILoginFormInputs, Status } from "../../../types";
-import { ErrorMessage } from "../../";
 import { login } from "../../../api";
 import { useState } from "react";
 import { useAuth } from "../../../hooks";
@@ -11,7 +10,6 @@ import { useAuth } from "../../../hooks";
 const LoginForm = () => {
   const { setToken, setUser } = useAuth();
   const [status, setStatus] = useState<Status>(Status.pending);
-  const [error, setError] = useState<string>("");
   const {
     register,
     handleSubmit,
@@ -36,7 +34,6 @@ const LoginForm = () => {
     } catch (e) {
       console.error(e);
       setStatus(Status.error);
-      setError("Server error");
     }
   };
 
@@ -44,49 +41,48 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.loginForm}>
-      <label>
-        <input
-          className={clsx(
-            styles.loginFormInputField,
-            errors.email && styles.loginFormInputFieldError,
-          )}
-          {...register("email", {
-            required: { value: true, message: "Email field is required" },
-            pattern: {
-              value: /\S+@\S+\.\S+/,
-              message: "The entered value does not match the email format",
-            },
-          })}
-          placeholder={"Email"}
-        />
-        {errors.email && <ErrorMessage error={errors.email.message} />}
-      </label>
-      <label>
-        <input
-          className={clsx(
-            styles.loginFormInputField,
-            errors.password && styles.loginFormInputFieldError,
-          )}
-          type={"password"}
-          {...register("password", {
-            required: { value: true, message: "Password field is required" },
-            minLength: {
-              value: 12,
-              message: "The minimum password length must be 12 characters",
-            },
-          })}
-          placeholder={"Password"}
-        />
-        {errors.password && <ErrorMessage error={errors.password.message} />}
-      </label>
-      <label>
-        <input
-          className={styles.loginFormSubmit}
-          type={"submit"}
-          disabled={disableSubmit}
-        />
-        {error && <ErrorMessage error={error} />}
-      </label>
+      <section>
+        <label>
+          <span>Mail</span>
+          <input
+            className={clsx(
+              styles.loginFormInputField,
+              errors.email && styles.loginFormInputFieldError,
+            )}
+            {...register("email", {
+              required: { value: true, message: "Email field is required" },
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "The entered value does not match the email format",
+              },
+            })}
+          />
+        </label>
+        <label>
+          <span>Password</span>
+          <input
+            className={clsx(
+              styles.loginFormInputField,
+              errors.password && styles.loginFormInputFieldError,
+            )}
+            type={"password"}
+            {...register("password", {
+              required: { value: true, message: "Password field is required" },
+              minLength: {
+                value: 12,
+                message: "The minimum password length must be 12 characters",
+              },
+            })}
+          />
+        </label>
+      </section>
+
+      <input
+        className={styles.loginFormSubmit}
+        type={"submit"}
+        disabled={disableSubmit}
+        value={"log in"}
+      />
     </form>
   );
 };

@@ -1,31 +1,59 @@
 .loginForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
   width: 100%;
 
-  & label {
+  & section {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+  }
+
+  & label {
+    height: 84px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #c3bfbf;
+    justify-content: space-around;
+
+    & span {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      color: #c3bfbf;
+    }
+
+    & input {
+      font-family: "Poppins", sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      border: none;
+      outline: none;
+      color: #1e1e1e;
+    }
   }
 }
 
-.loginFormInputField {
-  border-radius: 10px;
-  padding: 5px 10px;
-  font-size: 20px;
-}
-
-.loginFormInputFieldError {
-  border-color: red;
-}
-
 .loginFormSubmit {
-  border-radius: 10px;
-  padding: 5px 10px;
-  font-size: 20px;
-  border: 1px solid gray;
-  background: white;
+  width: 220px;
+  height: 61px;
+  padding: 17px 0 17px 0;
+  border-radius: 100px;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  background: #c3bfbf;
+  border: none;
+
   transition:
     0.5s linear background-color,
     0.5s linear color;
