@@ -1,0 +1,38 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  & label {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.loginFormInputField {
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.loginFormInputFieldError {
+  border-color: red;
+}
+
+.loginFormSubmit {
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid gray;
+  background: white;
+  transition:
+    0.5s linear background-color,
+    0.5s linear color;
+
+  &:hover {
+    cursor: pointer;
+    background: gray;
+    color: white;
+  }
+}

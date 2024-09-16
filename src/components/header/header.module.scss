@@ -1,0 +1,52 @@
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 80px;
+  background: #d9d9d9;
+  height: 800px;
+}
+
+.headerSectionBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 135px;
+  gap: 42px;
+
+  & h3 {
+    display: flex;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 96px;
+    text-align: left;
+  }
+
+  & p {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: center;
+    width: 848px;
+  }
+
+  & button {
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    width: 416px;
+    height: 61px;
+    top: 605px;
+    left: 512px;
+    padding: 17px 0 17px 0;
+    border-radius: 100px;
+    background: #c3bfbf;
+    border: none;
+    transition: 0.5s linear color;
+
+    &:hover {
+      cursor: pointer;
+      color: grey;
+    }
+  }
+}

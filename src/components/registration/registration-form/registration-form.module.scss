@@ -1,0 +1,41 @@
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  & label {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.registrationFormInputFields {
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.registrationFormInputFieldsError {
+  color: red;
+}
+
+.registrationFormSubmit {
+  margin-top: 40px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid gray;
+  background: white;
+  transition:
+    0.5s linear background-color,
+    0.5s linear color;
+
+  &:hover {
+    cursor: pointer;
+    background: gray;
+    color: white;
+  }
+}

@@ -1,0 +1,14 @@
+.registrationTitle {
+  font-size: 22px;
+}
+
+.registrationLinkToLogin {
+  text-decoration: none;
+  color: black;
+  transition: 0.5s color linear;
+
+  &:hover {
+    cursor: pointer;
+    color: gray;
+  }
+}
