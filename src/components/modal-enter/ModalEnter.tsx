@@ -24,26 +24,20 @@ const ModalEnter = () => {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState<boolean>(false);
   const [isOpenSignInModal, setIsOpenSignInModal] = useState<boolean>(false);
   const toggleLogin = () => {
-    setIsOpenLoginModal(prevState => !prevState)
-  }
+    setIsOpenLoginModal((prevState) => !prevState);
+  };
   const toggleSignIn = () => {
-    setIsOpenSignInModal(prevState => !prevState)
-  }
+    setIsOpenSignInModal((prevState) => !prevState);
+  };
   return (
     <>
-        <button
-          className={styles.loginButton}
-          onClick={toggleSignIn}
-        >
-          Sign Up
-        </button>
-        <button
-          className={styles.loginButton}
-          onClick={toggleLogin}
-        >
-          Log In
-        </button>
-      {isOpenSignInModal ?
+      <button className={styles.loginButton} onClick={toggleSignIn}>
+        Sign Up
+      </button>
+      <button className={styles.loginButton} onClick={toggleLogin}>
+        Log In
+      </button>
+      {isOpenSignInModal ? (
         <Modal
           isOpen={isOpenSignInModal}
           onRequestClose={toggleSignIn}
@@ -51,18 +45,20 @@ const ModalEnter = () => {
         >
           <Registration />
         </Modal>
-        : <></>
-      }
-      {isOpenLoginModal ?
+      ) : (
+        <></>
+      )}
+      {isOpenLoginModal ? (
         <Modal
           isOpen={isOpenLoginModal}
           onRequestClose={toggleLogin}
           style={customStyles}
         >
-          <Login />
+          <Login closeModal={toggleLogin} />
         </Modal>
-        : <></>
-      }
+      ) : (
+        <></>
+      )}
     </>
   );
 };
