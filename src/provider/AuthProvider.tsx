@@ -37,8 +37,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
       setUser,
       logOut,
     }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+    [setToken, setUser, logOut],
   );
 
   return (

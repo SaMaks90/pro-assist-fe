@@ -1,7 +1,12 @@
 export interface IUser {
-  lastName: string;
-  firstName: string;
-  type: string;
+  blocked: boolean;
+  confirmed: boolean;
+  createdAt: Date;
+  email: string;
+  id: number;
+  provider: string;
+  updatedAt: Date;
+  username: string;
 }
 
 export interface ILoginFormInputs {

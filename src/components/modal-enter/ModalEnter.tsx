@@ -21,21 +21,23 @@ const customStyles = {
 };
 const ModalEnter = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+
+  const toggleHandler = () => {
+    setIsOpenModal((prevState) => !prevState);
+  };
+
   return (
     <>
-      <button
-        className={styles.loginButton}
-        onClick={() => setIsOpenModal(true)}
-      >
+      <button className={styles.loginButton} onClick={toggleHandler}>
         Assistant Sign Up/Log In
       </button>
 
       <Modal
         isOpen={isOpenModal}
-        onRequestClose={() => setIsOpenModal(false)}
+        onRequestClose={toggleHandler}
         style={customStyles}
       >
-        <Login />
+        <Login closeModal={toggleHandler} />
       </Modal>
     </>
   );

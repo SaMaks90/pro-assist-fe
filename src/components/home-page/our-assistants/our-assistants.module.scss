@@ -1,0 +1,31 @@
+.ourAssistantsBlock {
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.ourAssistantsTitle {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.09px;
+  text-align: center;
+  color: #1e1e1e;
+}
+
+.ourAssistantsList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ourAssistantBlock {
+  display: flex;
+  width: 308px;
+  flex-direction: column;
+  border: 1px solid #6c6c6c;
+}

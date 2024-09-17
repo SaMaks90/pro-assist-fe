@@ -1,8 +1,9 @@
 import { createContext } from "react";
+import { IUser } from "../types";
 
 interface IAuthContext {
   token: string | null;
-  user: object | null;
+  user: IUser | null;
   setToken?: (token: string) => void;
   setUser?: (user: object) => void;
   logOut?: () => void;

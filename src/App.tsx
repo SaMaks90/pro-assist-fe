@@ -1,13 +1,11 @@
-import React from "react";
-import { AuthProvider } from "./provider";
-import { Routes } from "./routes";
+import { Header } from "./components";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-      <AuthProvider>
-        <Routes />
-      </AuthProvider>
+      <Header />
+      <Outlet />
     </>
   );
 };
