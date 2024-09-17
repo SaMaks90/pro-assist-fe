@@ -1,17 +1,29 @@
 //@ts-ignore
 import styles from "./registration.module.scss";
 import { RegistrationForm } from "../";
-import { Link } from "react-router-dom";
 
-const Registration = () => {
+interface IRegistrationProps {
+  closeModal: () => void
+  modalSwitch: () => void
+}
+
+const Registration = ({closeModal, modalSwitch}: IRegistrationProps) => {
+
   return (
-    <>
-      <h2 className={styles.registrationTitle}>Registration form</h2>
+    <div className={styles.registrationFormWrapper}>
+      <section className={styles.registrationForm}>
+      <section className={styles.registrationFormHeader}>
+        <h3>Sign Up </h3>
+        <h4>Welcome to ProAssist</h4>
+      </section>
       <RegistrationForm />
-      <Link className={styles.registrationLinkToLogin} to={"/login"}>
-        I want to move to the login form
-      </Link>
-    </>
+      <div 
+        className={styles.registrationLinkToLogin}
+      >
+        I already have a profile, <span onClick={modalSwitch}>log in</span>.
+      </div>
+      </section>
+    </div>
   );
 };
 

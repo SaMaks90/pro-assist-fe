@@ -21,44 +21,34 @@ const customStyles = {
   },
 };
 const ModalEnter = () => {
-  const [isOpenLoginModal, setIsOpenLoginModal] = useState<boolean>(false);
-  const [isOpenSignInModal, setIsOpenSignInModal] = useState<boolean>(false);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const toggleModal = () => {
+    setIsOpenModal((prevState) => !prevState);
+    setIsLogin(false)
+  };
   const toggleLogin = () => {
-    setIsOpenLoginModal((prevState) => !prevState);
-  };
-  const toggleSignIn = () => {
-    setIsOpenSignInModal((prevState) => !prevState);
-  };
+    setIsLogin((prevState) => !prevState)
+  } 
   return (
     <>
-      <button className={styles.loginButton} onClick={toggleSignIn}>
-        Sign Up
+      <button className={styles.loginButton} onClick={toggleModal}>
+        Assistant Sign Up/Log In
       </button>
-      <button className={styles.loginButton} onClick={toggleLogin}>
-        Log In
-      </button>
-      {isOpenSignInModal ? (
         <Modal
-          isOpen={isOpenSignInModal}
-          onRequestClose={toggleSignIn}
+          isOpen={isOpenModal}
+          onRequestClose={toggleModal}
           style={customStyles}
         >
-          <Registration />
+          {isLogin ?
+            <Login closeModal={toggleModal} />
+          :
+            <Registration 
+              modalSwitch={toggleLogin} 
+              closeModal={toggleModal}  
+            />
+          }
         </Modal>
-      ) : (
-        <></>
-      )}
-      {isOpenLoginModal ? (
-        <Modal
-          isOpen={isOpenLoginModal}
-          onRequestClose={toggleLogin}
-          style={customStyles}
-        >
-          <Login closeModal={toggleLogin} />
-        </Modal>
-      ) : (
-        <></>
-      )}
     </>
   );
 };

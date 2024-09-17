@@ -115,11 +115,11 @@ const RegistrationForm = () => {
       {errors.confirmPassword && (
         <ErrorMessage error={errors.confirmPassword.message} />
       )}
-      <input
+      <button
         className={styles.registrationFormSubmit}
         type={"submit"}
         disabled={disableSubmit}
-      />
+      >SIGN UP NOW</button>
       {error && <ErrorMessage error={error} />}
     </form>
   );
