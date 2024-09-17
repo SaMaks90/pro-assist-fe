@@ -1,5 +1,7 @@
 //@ts-ignore
 import styles from "./our-assistants.module.scss";
+import { Link } from "react-router-dom";
+import { clsx } from "clsx";
 
 const ourAssistants = [
   {
@@ -50,14 +52,29 @@ const OurAssistants = () => {
       <h4 className={styles.ourAssistantsTitle}>Our assistants</h4>
       <section className={styles.ourAssistantsList}>
         {ourAssistants.map((elem) => (
-          <section className={styles.ourAssistantBlock}>
-            <div></div>
-            <h5>{elem.username}</h5>
-            <span>{elem.title}</span>
-            <span>Rating {elem.rating}/5</span>
-            <span>{elem.reviews} reviews</span>
-            <span>Registered ago</span>
-            <span>Was online ago</span>
+          <section key={elem.id} className={styles.ourAssistantBlock}>
+            <div className={styles.ourAssistantAvatar}></div>
+            <section className={styles.ourAssistantBlockBottom}>
+              <section className={styles.ourAssistantAbout}>
+                <h5>{elem.username}</h5>
+                <h6>{elem.title}</h6>
+                <section>
+                  <span>Rating {elem.rating}/5</span>
+                  <span>{elem.reviews} reviews</span>
+                  <span>Registered ago</span>
+                  <span>Was online ago</span>
+                </section>
+              </section>
+              <Link className={styles.button} to={"/"}>
+                Get in Touch
+              </Link>
+              <Link
+                className={clsx(styles.button, styles.buttonLight)}
+                to={"/"}
+              >
+                View profile
+              </Link>
+            </section>
           </section>
         ))}
       </section>
