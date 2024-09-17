@@ -7,6 +7,8 @@ import { RegistrationForm } from "./registration/registration-form/RegistrationF
 import { HeaderNavigation } from "./header-navigation/HeaderNavigation";
 import { UserLogo } from "./user-logo/UserLogo";
 import { AboutUser } from "./about-user/AboutUser";
+import { HomePage } from "./home-page/HomePage";
+import { OurAssistants } from "./home-page/our-assistants/OurAssistants";
 
 export {
   Login,
@@ -18,4 +20,6 @@ export {
   HeaderNavigation,
   UserLogo,
   AboutUser,
+  HomePage,
+  OurAssistants,
 };

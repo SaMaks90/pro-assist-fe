@@ -7,7 +7,11 @@ import { login } from "../../../api";
 import { useState } from "react";
 import { useAuth } from "../../../hooks";
 
-const LoginForm = () => {
+interface ILoginFormProps {
+  closeModal: () => void;
+}
+
+const LoginForm = ({ closeModal }: ILoginFormProps) => {
   const { setToken, setUser } = useAuth();
   const [status, setStatus] = useState<Status>(Status.pending);
   const {
@@ -31,6 +35,7 @@ const LoginForm = () => {
         }
       }
       setStatus(Status.successful);
+      closeModal();
     } catch (e) {
       console.error(e);
       setStatus(Status.error);

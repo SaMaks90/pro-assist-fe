@@ -1,7 +1,19 @@
 //@ts-ignore
 import styles from "./about-user.module.scss";
+import { useAuth } from "../../hooks";
+import { useNavigate } from "react-router-dom";
 
 const AboutUser = () => {
+  const navigate = useNavigate();
+  const { logOut, user } = useAuth();
+
+  const clickExit = () => {
+    if (logOut) {
+      logOut();
+      navigate("/");
+    }
+  };
+
   return (
     <section className={styles.wrapperAboutUser}>
       <section className={styles.aboutUser}>
@@ -23,7 +35,7 @@ const AboutUser = () => {
           </svg>
         </span>
         <section>
-          <h4>Serhij Konoval</h4>
+          <h4>{user?.username}</h4>
           <h5>Business Assistant</h5>
         </section>
       </section>
@@ -66,7 +78,7 @@ const AboutUser = () => {
           <span>Message</span>
         </section>
       </section>
-      <section className={styles.exitUser}>
+      <section className={styles.exitUser} onClick={clickExit}>
         <svg
           width="14"
           height="15"

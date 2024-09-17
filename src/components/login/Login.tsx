@@ -2,7 +2,11 @@
 import styles from "./login.module.scss";
 import { LoginForm } from "../";
 
-const Login = () => {
+interface ILoginProps {
+  closeModal: () => void;
+}
+
+const Login = ({ closeModal }: ILoginProps) => {
   return (
     <section className={styles.loginForm}>
       <section className={styles.loginFormHeader}>
@@ -10,7 +14,7 @@ const Login = () => {
         <h4 className={styles.loginGreeting}>{`Welcome to 
         ProAssist`}</h4>
       </section>
-      <LoginForm />
+      <LoginForm closeModal={closeModal} />
     </section>
   );
 };

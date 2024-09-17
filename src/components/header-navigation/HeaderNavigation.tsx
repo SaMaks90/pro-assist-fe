@@ -7,6 +7,7 @@ import { ModalEnter } from "../modal-enter/ModalEnter";
 
 const HeaderNavigation = () => {
   const { token } = useAuth();
+
   return (
     <section className={styles.headerNavigation}>
       <Link to={"/"} className={styles.logo}>
