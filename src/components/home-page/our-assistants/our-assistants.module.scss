@@ -1,5 +1,5 @@
 .ourAssistantsBlock {
-  width: 100%;
+  width: 1280px;
   padding: 80px 0;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,7 @@
 }
 
 .ourAssistantsList {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,7 +26,84 @@
 
 .ourAssistantBlock {
   display: flex;
-  width: 308px;
+  max-width: 308px;
   flex-direction: column;
+  gap: 30px;
+  border-radius: 6px;
+  border: 1px solid rgba(108, 108, 108, 0.6);
+  padding: 16px;
+}
+
+.ourAssistantAvatar {
+  width: 276px;
+  height: 325px;
+  border-radius: 6px;
+  background: #d9d9d9;
+}
+
+.ourAssistantBlockBottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ourAssistantAbout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & section {
+    display: flex;
+    flex-direction: column;
+
+    & span {
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      color: #524e4e;
+    }
+  }
+
+  & h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: #1e1e1e;
+  }
+
+  & h6 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #1e1e1e;
+  }
+}
+
+.button {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: left;
+  padding: 17px 83px 17px 83px;
+  border-radius: 100px;
+  background: #c3bfbf;
+  text-decoration: none;
+  color: #000000;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.buttonLight {
   border: 1px solid #6c6c6c;
+  background: none;
 }
