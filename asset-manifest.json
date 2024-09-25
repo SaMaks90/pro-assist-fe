@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pro-assist-fe/static/css/main.d8bd36ef.css",
-    "main.js": "/pro-assist-fe/static/js/main.3f33cd66.js",
+    "main.js": "/pro-assist-fe/static/js/main.440629c0.js",
     "index.html": "/pro-assist-fe/index.html",
     "main.d8bd36ef.css.map": "/pro-assist-fe/static/css/main.d8bd36ef.css.map",
-    "main.3f33cd66.js.map": "/pro-assist-fe/static/js/main.3f33cd66.js.map"
+    "main.440629c0.js.map": "/pro-assist-fe/static/js/main.440629c0.js.map"
   },
   "entrypoints": [
     "static/css/main.d8bd36ef.css",
-    "static/js/main.3f33cd66.js"
+    "static/js/main.440629c0.js"
   ]
 }
